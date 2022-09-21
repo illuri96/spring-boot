@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -44,8 +45,7 @@ public class Student {
             nullable = false
     )
     private String emailId;
-    private String guardianName;
-    private String guardianEmail;
-    private String guardianMobile;
+    @Embedded
+    private Guardian guardian;
 
 }
