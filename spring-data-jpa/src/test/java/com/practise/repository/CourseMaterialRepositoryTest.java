@@ -1,13 +1,15 @@
 package com.practise.repository;
 
 import com.practise.entity.Course;
+import com.practise.entity.Student;
 import com.practise.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CourseMaterialRepositoryTest {
 
@@ -39,7 +41,7 @@ class CourseMaterialRepositoryTest {
         courseRepository.save(course);
     }
 
-    /*@Test
+    @Test
     public void findAllPagination(){
         Pageable firstPagewithThreeRecords =
                 PageRequest.of(0, 3);
@@ -64,8 +66,7 @@ class CourseMaterialRepositoryTest {
 
         System.out.println("courses = " + courses);
     }
-*/
-/*    @Test
+    @Test
     public void findAllSorting() {
         Pageable sortByTitle =
                 PageRequest.of(
@@ -93,9 +94,9 @@ class CourseMaterialRepositoryTest {
                 = courseRepository.findAll(sortByTitle).getContent();
 
         System.out.println("courses = " + courses);
-    }*/
+    }
 
-/*    @Test
+    @Test
     public void printfindByTitleContaining() {
         Pageable firstPageTenRecords =
                 PageRequest.of(0,10);
@@ -106,9 +107,9 @@ class CourseMaterialRepositoryTest {
                         firstPageTenRecords).getContent();
 
         System.out.println("courses = " + courses);
-    }*/
+    }
 
-/*    @Test
+    @Test
     public void saveCourseWithStudentAndTeacher() {
 
         Teacher teacher = Teacher.builder()
@@ -132,6 +133,6 @@ class CourseMaterialRepositoryTest {
         course.addStudents(student);
 
         courseRepository.save(course);
-    }*/
+    }
 
 }
